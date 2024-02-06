@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --COLOR-PRIMARY: #f47356;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: #2a3440;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
