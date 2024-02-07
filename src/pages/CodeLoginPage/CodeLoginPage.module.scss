@@ -1,0 +1,79 @@
+.loginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.login__img {
+  //   width: 72.4rem;
+  margin: 1.6rem;
+}
+
+.login__icon {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+}
+
+.loginContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.login__title {
+  font-weight: 600;
+  font-size: 7.2rem;
+  margin-bottom: 4.8rem;
+  text-align: center;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+}
+
+.code__input {
+  width: 6.6rem;
+  height: 6.6rem;
+  background-color: #ebeff2;
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.4rem;
+  margin-top: 4.8rem;
+}
+
+.button {
+  width: 53.4rem;
+  height: 7rem;
+  background-color: var(--COLOR-PRIMARY);
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #fefefe;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.resendBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  color: #5f6366;
+  font-weight: 400;
+  font-size: 1.4rem;
+}
