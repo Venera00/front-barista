@@ -1,4 +1,10 @@
-.orders {
+.orders_container {
   display: grid;
   grid-template-columns: 1fr 5fr;
+}
+
+.sidebar {
+  width: 22.1rem;
+  height: 102.4rem;
+  background-color: var(--COLOR-MAIN);
 }

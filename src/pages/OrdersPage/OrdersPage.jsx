@@ -3,7 +3,7 @@ import styles from "./OrdersPage.module.scss";
 
 const OrdersPage = () => {
   return (
-    <div className={styles.orders}>
+    <div className={styles.orders_container}>
       <div className={styles.sidebar}>
         <div className={styles.sidebarItems}>
           <div className={styles.sidebarItemWrapper}>

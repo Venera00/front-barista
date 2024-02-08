@@ -2,8 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import emailValidationSchema from "../../helpers/yup/emailValidationSchema";
-import loginImg from "../../assets/loginImg.png";
-import loginIcon from "../../assets/neocafeIconLogin.svg";
+import images from "../../assets/images";
 import styles from "./LoginPage.module.scss";
 
 const LoginPage = () => {
@@ -19,10 +18,10 @@ const LoginPage = () => {
 
   return (
     <div className={styles.loginContainer}>
-      <img src={loginImg} className={styles.login__img} alt="The cafe" />
+      <img src={images.loginImg} className={styles.login__img} alt="The cafe" />
 
       <div className={styles.login__icon}>
-        <img src={loginIcon} alt="The neocafe" />
+        <img src={images.neocafeIconLogin} alt="The neocafe" />
       </div>
       <div className={styles.loginContent}>
         <Formik

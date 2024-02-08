@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import loginImg from "../../assets/loginImg.png";
-import loginIcon from "../../assets/neocafeIconLogin.svg";
+import codeValidationSchema from "../../helpers/yup/codeValidationSchema";
+import images from "../../assets/images";
 import styles from "./CodeLoginPage.module.scss";
 
 const CodeLoginPage = () => {
@@ -16,18 +16,18 @@ const CodeLoginPage = () => {
 
   return (
     <div className={styles.loginContainer}>
-      <img src={loginImg} className={styles.login__img} alt="The cafe" />
+      <img src={images.loginImg} className={styles.login__img} alt="The cafe" />
 
       <div className={styles.login__icon}>
-        <img src={loginIcon} alt="The neocafe" />
+        <img src={images.neocafeIconLogin} alt="The neocafe" />
       </div>
       <div className={styles.loginContent}>
         <Formik
-          initialValues={{ code: "" }}
-          //   validationSchema={emailValidationSchema}
+          initialValues={{ code1: "", code2: "", code3: "", code4: "" }}
+          validationSchema={codeValidationSchema}
           onSubmit={handleSubmit}
         >
-          {({ isSubmitting }) => (
+          {({ isSubmitting, errors, touched }) => (
             <Form className={styles.emailForm}>
               <h2 className={styles.login__title}>
                 Код <br /> подтверждения
@@ -35,25 +35,44 @@ const CodeLoginPage = () => {
               <div className={styles.container}>
                 <div className={styles.inputContainer}>
                   <Field
-                    type="number"
-                    name="code"
-                    placeholder="_____"
-                    className={styles.code__input}
+                    type="text"
+                    name="code1"
+                    placeholder="_"
+                    maxLength="1"
+                    inputMode="numeric"
+                    className={`${styles.code__input} ${
+                      errors.code1 && touched.code1 && styles.error
+                    }`}
                   />
                   <Field
-                    type="number"
-                    name="code"
-                    className={styles.code__input}
+                    type="text"
+                    name="code2"
+                    placeholder="_"
+                    maxLength="1"
+                    inputMode="numeric"
+                    className={`${styles.code__input} ${
+                      errors.code2 && touched.code2 && styles.error
+                    }`}
                   />
                   <Field
-                    type="number"
-                    name="code"
-                    className={styles.code__input}
+                    type="text"
+                    name="code3"
+                    placeholder="_"
+                    maxLength="1"
+                    inputMode="numeric"
+                    className={`${styles.code__input} ${
+                      errors.code3 && touched.code3 && styles.error
+                    }`}
                   />
                   <Field
-                    type="number"
-                    name="code"
-                    className={styles.code__input}
+                    type="text"
+                    name="code4"
+                    placeholder="_"
+                    maxLength="1"
+                    inputMode="numeric"
+                    className={`${styles.code__input} ${
+                      errors.code4 && touched.code4 && styles.error
+                    }`}
                   />
                 </div>
                 <ErrorMessage

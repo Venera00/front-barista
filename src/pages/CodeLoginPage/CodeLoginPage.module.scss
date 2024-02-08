@@ -45,6 +45,19 @@
   outline: none;
   border: none;
   border-radius: 1rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 3.2rem;
+  color: var(--COLOR-BLACK);
+}
+
+.code__input::placeholder {
+  font-weight: 500;
+  font-size: 3.2rem;
+  color: var(--COLOR-BLACK);
+}
+
+.error {
 }
 
 .buttonWrapper {
