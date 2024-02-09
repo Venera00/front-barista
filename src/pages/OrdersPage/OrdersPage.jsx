@@ -38,17 +38,49 @@ const OrdersPage = () => {
 
       <div className={styles.ordertype_container}>
         <div className={styles.ordertype_wrapper}>
-          <h3>Заказы</h3>
-          <button>На вынос</button>
-          <button>В заведении</button>
+          <h3 className={styles.orders_title}>Заказы</h3>
+          <button className={`${styles.orderplace_btn} ${styles.takeaway_btn}`}>
+            На вынос
+          </button>
+          <button className={`${styles.orderplace_btn} ${styles.inplace_btn}`}>
+            В заведении
+          </button>
+          <img
+            src={images.bellIcon}
+            alt="The notifications"
+            className={styles.notifications_icon}
+          />
         </div>
 
-        <div className={styles.orderCardsWrapper}>
-          <button>Новые</button>
-          <button>В процессе</button>
-          <button>Готово</button>
-          <button>Отменено</button>
-          <button>Завершено</button>
+        <div className={styles.orders}>
+          <div className={styles.orderstatus_wrapper}>
+            <button
+              className={`${styles.orderstatus_btn} ${styles.orderstatus_new}`}
+            >
+              Новые
+            </button>
+            <button
+              className={`${styles.orderstatus_btn} ${styles.orderstatus_inprocess}`}
+            >
+              В процессе
+            </button>
+            <button
+              className={`${styles.orderstatus_btn} ${styles.orderstatus_ready}`}
+            >
+              Готово
+            </button>
+
+            <button
+              className={`${styles.orderstatus_btn} ${styles.orderstatus_cancelled}`}
+            >
+              Отменено
+            </button>
+            <button
+              className={`${styles.orderstatus_btn} ${styles.orderstatus_done}`}
+            >
+              Завершено
+            </button>
+          </div>
         </div>
       </div>
     </div>

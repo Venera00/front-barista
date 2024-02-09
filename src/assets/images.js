@@ -6,6 +6,7 @@ import profileIcon from "./profileIcon.svg";
 import menuIcon from "./menuIcon.svg";
 import bellIcon from "./bellIcon.svg";
 import logoutIcon from "./logoutIcon.svg";
+import closeIcon from "./mdi_close.svg";
 
 const images = {
   loginImg: loginImg,
@@ -16,6 +17,7 @@ const images = {
   menuIcon: menuIcon,
   bellIcon: bellIcon,
   logoutIcon: logoutIcon,
+  closeIcon: closeIcon,
 };
 
 export default images;
