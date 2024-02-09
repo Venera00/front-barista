@@ -36,8 +36,8 @@ const OrdersPage = () => {
         </div>
       </div>
 
-      <div className={styles.ordersContainer}>
-        <div className={styles.orderTypeWrapper}>
+      <div className={styles.ordertype_container}>
+        <div className={styles.ordertype_wrapper}>
           <h3>Заказы</h3>
           <button>На вынос</button>
           <button>В заведении</button>

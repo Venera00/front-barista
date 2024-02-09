@@ -1,6 +1,7 @@
 .orders_container {
   display: grid;
   grid-template-columns: 1fr 5fr;
+  height: 102.4rem;
 }
 
 .sidebar {
@@ -58,9 +59,13 @@
   margin-top: 63rem;
 }
 
-.logout_wrapper img {
-  padding-left: 1rem;
+.ordertype_container {
+  display: flex;
+  flex-direction: column;
+  width: 121.9rem;
+  height: 10.2rem;
 }
 
-.logout_wrapper p {
+.ordertype_wrapper {
+  display: flex;
 }
