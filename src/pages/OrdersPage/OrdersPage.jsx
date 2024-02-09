@@ -1,19 +1,37 @@
 import React from "react";
+import images from "../../assets/images";
 import styles from "./OrdersPage.module.scss";
 
 const OrdersPage = () => {
   return (
     <div className={styles.orders_container}>
       <div className={styles.sidebar}>
-        <div className={styles.sidebarItems}>
-          <div className={styles.sidebarItemWrapper}>
+        <img
+          src={images.neocafeMainIcon}
+          alt="Neocafe Icon"
+          className={styles.main_icon}
+        />
+        <div className={styles.sidebar_items}>
+          <button
+            className={`${styles.sidebarItemWrapper} ${styles.orders_btn}`}
+          >
+            <img src={images.ordersIcon} alt="Orders Icon" />
             <p>Заказы</p>
-          </div>
-          <div className={styles.sidebarItemWrapper}>
+          </button>
+          <button className={styles.sidebarItemWrapper}>
+            <img src={images.menuIcon} alt="Menu Icon" />
             <p>Меню</p>
-          </div>
-          <div className={styles.sidebarItemWrapper}>
+          </button>
+          <button className={styles.sidebarItemWrapper}>
+            <img src={images.profileIcon} alt="Profile Icon" />
             <p>Профиль</p>
+          </button>
+
+          <div
+            className={`${styles.logout_wrapper} ${styles.sidebarItemWrapper}`}
+          >
+            <img src={images.logoutIcon} alt="Logout" />
+            <p>Выйти</p>
           </div>
         </div>
       </div>

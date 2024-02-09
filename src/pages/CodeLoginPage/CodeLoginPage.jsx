@@ -27,7 +27,7 @@ const CodeLoginPage = () => {
           validationSchema={codeValidationSchema}
           onSubmit={handleSubmit}
         >
-          {({ isSubmitting, errors, touched }) => (
+          {({ isSubmitting, errors, touched, isValid }) => (
             <Form className={styles.emailForm}>
               <h2 className={styles.login__title}>
                 Код <br /> подтверждения
@@ -84,7 +84,7 @@ const CodeLoginPage = () => {
               <div className={styles.buttonWrapper}>
                 <button
                   type="submit"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || !isValid}
                   className={styles.button}
                 >
                   Войти
