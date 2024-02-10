@@ -75,7 +75,7 @@
 .ordertype_wrapper {
   display: flex;
   align-items: center;
-  width: 121.9rem;
+  // width: 121.9rem;
   height: 10.2rem;
 }
 
@@ -86,6 +86,7 @@
   border: none;
   font-weight: 600;
   font-size: 2rem;
+  color: var(--COLOR-BLACK);
 }
 
 .takeaway_btn {
@@ -96,8 +97,6 @@
   border-radius: 0 10rem 10rem 0;
 }
 
-.orderplace_btn:hover,
-.orderplace_btn:active,
 .orderstatus_btn:hover,
 .orderstatus_btn:active {
   background-color: var(--COLOR-PRIMARY);
@@ -129,25 +128,64 @@
   font-size: 2rem;
   border-radius: 10rem;
   border: none;
+  overflow: hidden;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: var(--COLOR-GRAY);
+}
+
+.selectedOrderType {
+  background-color: var(--COLOR-PRIMARY);
+  color: #ffffff;
+}
+
+.order_status {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
 }
 
 .orderstatus_new {
   width: 15.6rem;
+  background-color: var(--COLOR-PRIMARY);
+  color: #ffffff;
+}
+
+.status_new {
+  background-color: #85caff;
 }
 
 .orderstatus_inprocess {
   width: 20rem;
 }
 
+.status_inprocess {
+  background-color: #fdf876;
+}
+
 .orderstatus_ready {
   width: 15.7rem;
+}
+
+.status_ready {
+  background-color: #51db67;
 }
 
 .orderstatus_cancelled {
   width: 19.1rem;
 }
 
+.status_cancelled {
+  background-color: #ffffff;
+}
+
 .orderstatus_done {
   width: 20.3rem;
+}
+
+.status_done {
+  background-color: #2a3440;
 }
