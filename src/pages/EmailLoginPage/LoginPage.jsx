@@ -9,8 +9,6 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (values, { setSubmitting }) => {
-    // onEmailSubmit(values.email);
-
     setSubmitting(false);
 
     navigate("/verify");
@@ -29,28 +27,29 @@ const LoginPage = () => {
           validationSchema={emailValidationSchema}
           onSubmit={handleSubmit}
         >
-          {({ isSubmitting }) => (
+          {({ isSubmitting, isValid }) => (
             <Form className={styles.emailForm}>
               <h2 className={styles.login__title}>Вход</h2>
-              <div className={styles.container}>
-                <div>
-                  <Field
-                    type="email"
-                    name="email"
-                    placeholder="Электронная почта"
-                    className={styles.email__input}
-                  />
-                </div>
-                <ErrorMessage
+
+              <div>
+                <Field
+                  type="email"
+                  name="email"
+                  placeholder="Электронная почта"
+                  className={styles.email__input}
+                />
+                {/* <ErrorMessage
                   name="email"
                   component="div"
                   className={styles.errorMessage}
-                />
+                /> */}
               </div>
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className={styles.button}
+                disabled={isSubmitting || !isValid}
+                className={`${styles.button} ${
+                  isSubmitting || !isValid ? styles.button__disabled : ""
+                }`}
               >
                 Получить код
               </button>

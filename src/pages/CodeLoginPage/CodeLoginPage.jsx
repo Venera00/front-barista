@@ -85,7 +85,9 @@ const CodeLoginPage = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting || !isValid}
-                  className={styles.button}
+                  className={`${styles.button} ${
+                    isSubmitting || !isValid ? styles.button__disabled : ""
+                  }`}
                 >
                   Войти
                 </button>

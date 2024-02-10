@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
+  overflow: hidden;
 }
 
 .login__img {
@@ -72,4 +73,9 @@
   border: none;
   border-radius: 2rem;
   cursor: pointer;
+}
+
+.button__disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

@@ -57,9 +57,6 @@
   color: var(--COLOR-BLACK);
 }
 
-.error {
-}
-
 .buttonWrapper {
   display: flex;
   align-items: center;
@@ -89,4 +86,9 @@
   color: #5f6366;
   font-weight: 400;
   font-size: 1.4rem;
+}
+
+.button__disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
