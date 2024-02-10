@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import images from "../../assets/images";
-// import NewOrderCard from "../../components/orderCard/NewOrderCard";
+import NewOrderCard from "../../components/orderCard/newOrderCard";
 import styles from "./OrdersPage.module.scss";
 
 const OrdersPage = () => {
@@ -21,14 +21,18 @@ const OrdersPage = () => {
       status: "новый",
       number: "M-47",
       waiter: "Валентина",
-      description: "New order 1",
+      first_description: "New order 1",
+      second_description: "New order 1",
+      third_description: "New order 1",
     },
     {
       id: 2,
       status: "новый",
       number: "M-47",
       waiter: "Валентина",
-      description: "New order 1",
+      first_description: "New order 2",
+      second_description: "New order 2",
+      third_description: "New order 2",
     },
   ];
 
@@ -141,12 +145,12 @@ const OrdersPage = () => {
             </button>
           </div>
 
-          {/* <div className={styles.ordercard_wrapper}>
+          <div className={styles.ordercard_wrapper}>
             {showNewOrders &&
               newOrders.map((order) => (
                 <NewOrderCard key={order.id} order={order} />
               ))}
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

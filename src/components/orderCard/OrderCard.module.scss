@@ -1,6 +1,80 @@
-// .neworder_card {
-//   width: 24.3rem;
-//   height: 30rem;
-//   background-color: #fff;
-//   color: var(--COLOR-BLACK);
-// }
+.neworder_card {
+  position: relative;
+  width: 24.3rem;
+  height: 30rem;
+  background-color: #fff;
+  color: var(--COLOR-BLACK);
+  border-radius: 1.2rem;
+}
+
+.neworder_card:hover,
+.neworder_card:active {
+  background-color: var(--COLOR-MAIN);
+  color: #fff;
+}
+
+.neworder_card:hover .close_btn {
+  fill: #fff;
+}
+
+.order_content {
+  padding: 2rem;
+}
+
+.close_btn {
+  position: absolute;
+  right: 1.6rem;
+  top: 1.8rem;
+  cursor: pointer;
+}
+
+.order_number {
+  font-weight: 600;
+  font-size: 2.4rem;
+  padding-bottom: 0.8rem;
+}
+
+.waiter_name {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #5f6366;
+  padding-bottom: 1.6rem;
+  padding-bottom: 1.6rem;
+}
+
+.neworder_card:hover .waiter_name {
+  color: #fff;
+}
+
+.order_desc {
+  font-weight: 400;
+  font-size: 1.6rem;
+  padding-bottom: 0.8rem;
+}
+
+.order_more {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--COLOR-PRIMARY);
+  padding-bottom: 5rem;
+}
+
+.neworder_btn {
+  width: 21.1rem;
+  height: 4rem;
+  border: 2px solid var(--COLOR-PRIMARY);
+  border-radius: 1.2rem;
+  cursor: pointer;
+  background-color: #fff;
+  color: var(--COLOR-PRIMARY);
+}
+
+.neworder_card:hover .neworder_btn {
+  background-color: var(--COLOR-PRIMARY);
+  color: #fff;
+}
+
+.neworder_btn:hover {
+  background-color: var(--COLOR-PRIMARY);
+  color: #fff;
+}

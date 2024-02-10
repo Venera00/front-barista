@@ -140,6 +140,7 @@
 .selectedOrderType {
   background-color: var(--COLOR-PRIMARY);
   color: #ffffff;
+  border-radius: 10rem;
 }
 
 .order_status {
@@ -188,4 +189,12 @@
 
 .status_done {
   background-color: #2a3440;
+}
+
+.ordercard_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 3.2rem;
+  margin-left: 3.2rem;
 }
