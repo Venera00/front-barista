@@ -12,6 +12,7 @@ const CodeLoginPage = ({ updateStatus }) => {
   const handleSubmit = (values, { setSubmitting }) => {
     setSubmitting(false);
 
+    updateStatus();
     navigate("/orders");
   };
 
@@ -76,11 +77,6 @@ const CodeLoginPage = ({ updateStatus }) => {
                     }`}
                   />
                 </div>
-                <ErrorMessage
-                  name="email"
-                  component="div"
-                  className={styles.errorMessage}
-                />
               </div>
               <div className={styles.buttonWrapper}>
                 <button
