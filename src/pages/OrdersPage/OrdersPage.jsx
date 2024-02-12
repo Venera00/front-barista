@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import images from "../../assets/images";
+import SidebarMain from "../../components/sideBar/sidebarMain";
 import NewOrderCard from "../../components/orderCard/newOrderCard";
+
 import SidebarOrderItems from "../../components/sidebarOrderItems/SidebarOrderItems";
 import styles from "./OrdersPage.module.scss";
 
@@ -45,36 +47,7 @@ const OrdersPage = () => {
     <div className={styles.orders_container}>
       {sidebar && <SidebarOrderItems />}
 
-      <div className={styles.sidebar}>
-        <img
-          src={images.neocafeMainIcon}
-          alt="Neocafe Icon"
-          className={styles.main_icon}
-        />
-        <div className={styles.sidebar_items}>
-          <button
-            className={`${styles.sidebarItemWrapper} ${styles.orders_btn}`}
-          >
-            <img src={images.ordersIcon} alt="Orders Icon" />
-            <p>Заказы</p>
-          </button>
-          <button className={styles.sidebarItemWrapper}>
-            <img src={images.menuIcon} alt="Menu Icon" />
-            <p>Меню</p>
-          </button>
-          <button className={styles.sidebarItemWrapper}>
-            <img src={images.profileIcon} alt="Profile Icon" />
-            <p>Профиль</p>
-          </button>
-
-          <div
-            className={`${styles.logout_wrapper} ${styles.sidebarItemWrapper}`}
-          >
-            <img src={images.logoutIcon} alt="Logout" />
-            <p>Выйти</p>
-          </div>
-        </div>
-      </div>
+      <SidebarMain />
 
       <div className={styles.ordertype_container}>
         <div className={styles.ordertype_wrapper}>
