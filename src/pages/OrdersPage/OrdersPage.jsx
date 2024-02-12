@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import images from "../../assets/images";
 import NewOrderCard from "../../components/orderCard/newOrderCard";
+import SidebarOrderItems from "../../components/sidebarOrderItems/SidebarOrderItems";
 import styles from "./OrdersPage.module.scss";
 
 const OrdersPage = () => {
   const [selectedOrderType, setSelectedOrderType] = useState("takeaway");
   const [showNewOrders, setShowNewOrders] = useState(true);
+
+  const [sidebar, setSidebar] = useState(false);
+
+  const showSidebar = () => setSidebar(!sidebar);
 
   const handleOrderTypeSelection = (ordertype) => {
     setSelectedOrderType(ordertype);
@@ -38,6 +43,8 @@ const OrdersPage = () => {
 
   return (
     <div className={styles.orders_container}>
+      {sidebar && <SidebarOrderItems />}
+
       <div className={styles.sidebar}>
         <img
           src={images.neocafeMainIcon}
@@ -148,7 +155,11 @@ const OrdersPage = () => {
           <div className={styles.ordercard_wrapper}>
             {showNewOrders &&
               newOrders.map((order) => (
-                <NewOrderCard key={order.id} order={order} />
+                <NewOrderCard
+                  key={order.id}
+                  order={order}
+                  onClick={showSidebar}
+                />
               ))}
           </div>
         </div>

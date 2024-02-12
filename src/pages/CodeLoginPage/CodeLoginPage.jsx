@@ -5,7 +5,8 @@ import codeValidationSchema from "../../helpers/yup/codeValidationSchema";
 import images from "../../assets/images";
 import styles from "./CodeLoginPage.module.scss";
 
-const CodeLoginPage = () => {
+const CodeLoginPage = ({ updateStatus }) => {
+  //updateStatus from Routes
   const navigate = useNavigate();
 
   const handleSubmit = (values, { setSubmitting }) => {

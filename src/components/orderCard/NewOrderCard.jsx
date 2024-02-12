@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import images from "../../assets/images";
 import styles from "./OrderCard.module.scss";
 
-const NewOrderCard = ({ order }) => {
+const NewOrderCard = ({ order, onClick }) => {
   const [hover, setHover] = useState(false);
 
   const handleMouseEnter = () => {
@@ -14,7 +14,7 @@ const NewOrderCard = ({ order }) => {
   };
 
   return (
-    <div className={styles.neworder_card}>
+    <div className={styles.neworder_card} onClick={onClick}>
       <div className={styles.order_content}>
         <img
           src={hover ? images.closeIconWhite : images.closeIcon}
