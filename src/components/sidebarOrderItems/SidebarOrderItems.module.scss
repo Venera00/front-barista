@@ -1,6 +1,9 @@
 .sidebar_container {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
   width: 52rem;
-  height: 102.4rem;
+  height: 100vh;
   background-color: var(--COLOR-MAIN);
-  float: left;
 }

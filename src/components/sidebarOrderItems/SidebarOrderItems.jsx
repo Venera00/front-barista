@@ -3,13 +3,13 @@ import images from "../../assets/images";
 import styles from "./SidebarOrderItems.module.scss";
 
 const SidebarOrderItems = ({ order }) => {
-  const dishData = [
-    {
-      order_title: "Латте",
-      order_details: ["Коровье молоко", "Карамельный сироп"],
-      price: "140",
-    },
-  ];
+  // const dishData = [
+  //   {
+  //     order_title: "Латте",
+  //     order_details: ["Коровье молоко", "Карамельный сироп"],
+  //     price: "140",
+  //   },
+  // ];
 
   return (
     <div className={styles.sidebar_container}>
@@ -18,15 +18,15 @@ const SidebarOrderItems = ({ order }) => {
       <div>
         <div className={styles.orderdetails_wrapper}>
           <img src={images.coffee} alt="The order item" />
-          <div>
+          {/* <div>
             <h3>{order.order_title}</h3>
             {dishData.order_details.map((detail, index) => (
               <p key={index}>{detail}</p>
             ))}
-          </div>
+          </div> */}
 
           <div>
-            <p>{order.price}</p>
+            {/* <p>{order.price}</p> */}
             <div>
               <button>+</button>
               <button>-</button>
