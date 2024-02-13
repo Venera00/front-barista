@@ -7,6 +7,25 @@ const MenuPage = () => {
   return (
     <div>
       <SidebarMain />
+
+      <header>
+        <h3>Меню</h3>
+        <div>
+          <img src={images.searchIcon} alt="Search" />
+          <input type="text" />
+        </div>
+
+        <img src={images.bellIcon} alt="Notifications" />
+      </header>
+
+      <section>
+        <div className={styles.menutype}>
+          <button className={styles.menutype__btn}>Кофе</button>
+          <button className={styles.menutype__btn}>Выпечка</button>
+          <button className={styles.menutype__btn}>Десерты</button>
+          <button className={styles.menutype__btn}>Напитки</button>
+        </div>
+      </section>
     </div>
   );
 };

@@ -9,6 +9,7 @@ import logoutIcon from "./logoutIcon.svg";
 import closeIcon from "./mdi_close.svg";
 import closeIconWhite from "./mdi_close_white.svg";
 import coffee from "./coffee.svg";
+import searchIcon from "./searchIcon.svg";
 
 const images = {
   loginImg,
@@ -22,6 +23,7 @@ const images = {
   closeIcon,
   closeIconWhite,
   coffee,
+  searchIcon,
 };
 
 export default images;
