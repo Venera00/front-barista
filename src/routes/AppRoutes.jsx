@@ -4,6 +4,8 @@ import PrivateRoutes from "./PrivateRoutes";
 import LoginPage from "../pages/EmailLoginPage/LoginPage";
 import CodeLoginPage from "../pages/CodeLoginPage/CodeLoginPage";
 import OrdersPage from "../pages/OrdersPage/OrdersPage";
+import MenuPage from "../pages/MenuPage/MenuPage";
+import ProfilePage from "../pages/ProfilePage/ProfilePage";
 
 function AppRoutes() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -21,6 +23,8 @@ function AppRoutes() {
         />
         <Route element={<PrivateRoutes isLoggedIn={isLoggedIn} />}>
           <Route path="/orders" element={<OrdersPage />} />
+          <Route path="/menu" element={<MenuPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

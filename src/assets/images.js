@@ -11,17 +11,17 @@ import closeIconWhite from "./mdi_close_white.svg";
 import coffee from "./coffee.svg";
 
 const images = {
-  loginImg: loginImg,
-  neocafeIconLogin: neocafeIconLogin,
-  neocafeMainIcon: neocafeMainIcon,
-  ordersIcon: ordersIcon,
-  profileIcon: profileIcon,
-  menuIcon: menuIcon,
-  bellIcon: bellIcon,
-  logoutIcon: logoutIcon,
-  closeIcon: closeIcon,
-  closeIconWhite: closeIconWhite,
-  coffee: coffee,
+  loginImg,
+  neocafeIconLogin,
+  neocafeMainIcon,
+  ordersIcon,
+  profileIcon,
+  menuIcon,
+  bellIcon,
+  logoutIcon,
+  closeIcon,
+  closeIconWhite,
+  coffee,
 };
 
 export default images;
