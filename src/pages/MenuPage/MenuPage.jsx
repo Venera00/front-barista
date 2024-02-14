@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SidebarMain from "../../components/sideBar/sidebarMain";
+import MenuCard from "../../components/menuCard/MenuCard";
 import images from "../../assets/images";
 import styles from "./MenuPage.module.scss";
 
@@ -75,6 +76,8 @@ const MenuPage = () => {
               Напитки
             </button>
           </div>
+
+          <MenuCard />
         </section>
       </div>
     </div>
