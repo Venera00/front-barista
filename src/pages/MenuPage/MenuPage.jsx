@@ -1,31 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import SidebarMain from "../../components/sideBar/sidebarMain";
 import images from "../../assets/images";
 import styles from "./MenuPage.module.scss";
 
 const MenuPage = () => {
+  const [inputSearch, setInputSearch] = useState("");
+
+  const handleSearchInput = (e) => {
+    setInputSearch(e.target.value);
+
+    console.log(inputSearch);
+  };
+
+  const fetchData = (value) => {
+    // axios......
+  };
+
+  const handleEnter = (e) => {
+    if (e.key === "Enter") {
+      fetchData();
+    }
+  };
+
   return (
-    <div>
+    <div className={styles.menuContainer}>
       <SidebarMain />
 
-      <header>
-        <h3>Меню</h3>
-        <div>
-          <img src={images.searchIcon} alt="Search" />
-          <input type="text" />
-        </div>
+      <div className={styles.menu}>
+        <header className={styles.menu__header}>
+          <h3>Меню</h3>
+          <div className={styles.search_wrapper}>
+            <img
+              src={images.searchIcon}
+              alt="Search"
+              className={styles.search__icon}
+            />
+            <input
+              type="text"
+              placeholder="Поиск"
+              className={styles.search__input}
+              value={inputSearch}
+              onChange={handleSearchInput}
+              onKeyUp={handleEnter}
+            />
+          </div>
 
-        <img src={images.bellIcon} alt="Notifications" />
-      </header>
+          <img
+            src={images.bellIcon}
+            alt="Notifications"
+            className={styles.notifications}
+          />
+        </header>
 
-      <section>
-        <div className={styles.menutype}>
-          <button className={styles.menutype__btn}>Кофе</button>
-          <button className={styles.menutype__btn}>Выпечка</button>
-          <button className={styles.menutype__btn}>Десерты</button>
-          <button className={styles.menutype__btn}>Напитки</button>
-        </div>
-      </section>
+        <section>
+          <div className={styles.menutype}>
+            <button className={styles.menutype__btn}>Кофе</button>
+            <button className={styles.menutype__btn}>Выпечка</button>
+            <button className={styles.menutype__btn}>Десерты</button>
+            <button className={styles.menutype__btn}>Напитки</button>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

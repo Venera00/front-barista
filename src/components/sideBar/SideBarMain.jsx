@@ -19,10 +19,10 @@ const SidebarMain = () => {
         />
         <div className={styles.sidebar_items}>
           <NavLink
-            exact
+            // exact
             to="/orders"
             className={styles.navlink}
-            activeClassName={styles.active}
+            // activeClassName={styles.active}
             onClick={() => handleNavlinkClick("/orders")}
           >
             <img src={images.ordersIcon} alt="Orders Icon" />
@@ -31,7 +31,7 @@ const SidebarMain = () => {
           <NavLink
             to="/menu"
             className={styles.navlink}
-            activeClassName={styles.active}
+            // activeClassName={styles.active}
             onClick={() => handleNavlinkClick("/menu")}
           >
             <img src={images.menuIcon} alt="Menu Icon" />
@@ -40,7 +40,7 @@ const SidebarMain = () => {
           <NavLink
             to="/profile"
             className={styles.navlink}
-            activeClassName={styles.active}
+            // activeClassName={styles.active}
             onClick={() => handleNavlinkClick("/profile")}
           >
             <img src={images.profileIcon} alt="Profile Icon" />
