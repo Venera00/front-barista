@@ -52,12 +52,28 @@ const MenuPage = () => {
           />
         </header>
 
-        <section>
+        <section className={styles.menu_container}>
           <div className={styles.menutype}>
-            <button className={styles.menutype__btn}>Кофе</button>
-            <button className={styles.menutype__btn}>Выпечка</button>
-            <button className={styles.menutype__btn}>Десерты</button>
-            <button className={styles.menutype__btn}>Напитки</button>
+            <button
+              className={`${styles.menutype__btn} ${styles.menutype__coffee}`}
+            >
+              Кофе
+            </button>
+            <button
+              className={`${styles.menutype__btn} ${styles.menutype__bakery}`}
+            >
+              Выпечка
+            </button>
+            <button
+              className={`${styles.menutype__btn} ${styles.menutype__dessert}`}
+            >
+              Десерты
+            </button>
+            <button
+              className={`${styles.menutype__btn} ${styles.menutype__drinkables}`}
+            >
+              Напитки
+            </button>
           </div>
         </section>
       </div>
