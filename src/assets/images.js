@@ -10,6 +10,10 @@ import closeIcon from "./mdi_close.svg";
 import closeIconWhite from "./mdi_close_white.svg";
 import coffee from "./coffee.svg";
 import searchIcon from "./searchIcon.svg";
+import CoffeeBobs from "./coffeeBobs.svg";
+import Bakery from "./bakery.svg";
+import Dessert from "./dessert.svg";
+import Cocktail from "./cocktail.svg";
 
 const images = {
   loginImg,
@@ -24,6 +28,10 @@ const images = {
   closeIconWhite,
   coffee,
   searchIcon,
+  CoffeeBobs,
+  Bakery,
+  Dessert,
+  Cocktail,
 };
 
 export default images;

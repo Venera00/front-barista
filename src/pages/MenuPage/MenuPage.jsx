@@ -2,6 +2,15 @@ import React, { useState } from "react";
 import SidebarMain from "../../components/sideBar/sidebarMain";
 import MenuCard from "../../components/menuCard/MenuCard";
 import images from "../../assets/images";
+// import { ReactComponent as CoffeeBobs } from "../../assets/coffeeBobs.svg";
+// import { ReactComponent as Bakery } from "../../assets/bakery.svg";
+// import { ReactComponent as Dessert } from "../../assets/dessert.svg";
+// import { ReactComponent as Cocktail } from "../../assets/cocktail.svg";
+
+// import { ReactComponent as CoffeeBobs } from "../../assets/images";
+// import { ReactComponent as Bakery } from "../../assets/images";
+// import { ReactComponent as Dessert } from "../../assets/images";
+// import { ReactComponent as Cocktail } from "../../assets/images";
 import styles from "./MenuPage.module.scss";
 
 const MenuPage = () => {
@@ -58,21 +67,29 @@ const MenuPage = () => {
             <button
               className={`${styles.menutype__btn} ${styles.menutype__coffee}`}
             >
+              {/* <CoffeeBobs className={styles.menutype__logo} /> */}
+              <img src={images.CoffeeBobs} alt="Coffee icon" />
               Кофе
             </button>
             <button
               className={`${styles.menutype__btn} ${styles.menutype__bakery}`}
             >
+              {/* <Bakery /> */}
+              <img src={images.Bakery} alt="Bakery icon" />
               Выпечка
             </button>
             <button
               className={`${styles.menutype__btn} ${styles.menutype__dessert}`}
             >
+              {/* <Dessert /> */}
+              <img src={images.Dessert} alt="Dessert icon" />
               Десерты
             </button>
             <button
               className={`${styles.menutype__btn} ${styles.menutype__drinkables}`}
             >
+              {/* <Cocktail /> */}
+              <img src={images.Cocktail} alt="Cocktai icon" />
               Напитки
             </button>
           </div>
