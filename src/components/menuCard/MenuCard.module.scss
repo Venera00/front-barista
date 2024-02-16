@@ -1,5 +1,49 @@
 .menucard {
+  position: relative;
   width: 33rem;
   height: 14rem;
   border-radius: 1.6rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &__img {
+    width: 12rem;
+    height: 10.8rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 6.2rem;
+    justify-content: start;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 2rem;
+  }
+
+  &__price {
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: var(--COLOR-PRIMARY);
+  }
+
+  &__btn {
+    position: absolute;
+    width: 6.7rem;
+    height: 4.8rem;
+    right: 0;
+    bottom: 0;
+    background-color: var(--COLOR-PRIMARY);
+    border: none;
+    color: #fff;
+    font-size: 2.8rem;
+    border-radius: 2rem 0 2rem 0;
+    cursor: pointer;
+  }
 }

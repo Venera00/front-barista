@@ -32,6 +32,40 @@ const MenuPage = () => {
     }
   };
 
+  const newMenuItem = [
+    {
+      id: 1,
+      img: images.coffee,
+      title: "Капучино",
+      price: "140 c",
+    },
+    {
+      id: 2,
+      img: images.coffee,
+      title: "Капучино",
+      price: "140 c",
+    },
+
+    {
+      id: 3,
+      img: images.coffee,
+      title: "Капучино",
+      price: "140 c",
+    },
+    {
+      id: 4,
+      img: images.coffee,
+      title: "Капучино",
+      price: "140 c",
+    },
+    {
+      id: 5,
+      img: images.coffee,
+      title: "Капучино",
+      price: "140 c",
+    },
+  ];
+
   return (
     <div className={styles.menuContainer}>
       <SidebarMain />
@@ -94,7 +128,11 @@ const MenuPage = () => {
             </button>
           </div>
 
-          <MenuCard />
+          <div className={styles.menuItem_container}>
+            {newMenuItem.map((menuItem) => (
+              <MenuCard key={menuItem.id} menuItem={menuItem} />
+            ))}
+          </div>
         </section>
       </div>
     </div>
