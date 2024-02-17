@@ -8,20 +8,20 @@ const ProfilePage = () => {
     <div className={styles.profile_container}>
       <SidebarMain />
 
-      <header>
-        <div className={styles.ordertype_wrapper}>
-          <h3 className={styles.orders_title}>Заказы</h3>
-          <button>Профиль</button>
-          <button>График работы</button>
-          <img
-            src={images.bellIcon}
-            alt="The notifications"
-            className={styles.notifications_icon}
-          />
+      <header className={styles.header}>
+        <h3 className={styles.header_title}>Профиль</h3>
+        <div className={styles.btn}>
+          <button className={styles.btn_profile}>Профиль</button>
+          <button className={styles.btn_schedule}>График работы</button>
         </div>
+        <img
+          src={images.bellIcon}
+          alt="The notifications"
+          className={styles.notifications_icon}
+        />
       </header>
 
-      <section></section>
+      <section className={styles.about}></section>
     </div>
   );
 };
