@@ -47,23 +47,10 @@
     font-weight: 600;
     font-size: 2rem;
   }
-
-  &_profile:hover,
-  &_schedule:hover {
-    background-color: var(--COLOR-PRIMARY);
-    color: #fff;
-  }
-
-  &_profile:hover {
-    border-radius: 10rem;
-  }
-
-  &_schedule:hover {
-    border-radius: 10rem;
-  }
 }
 
-.about {
+.about,
+.schedule {
   background-color: var(--COLOR-GRAY);
   height: 100vh;
   width: 100%;
@@ -76,5 +63,25 @@
     height: 31.8rem;
     background-color: #fff;
     border-radius: 2rem;
+  }
+}
+
+.selectedBtn {
+  background-color: var(--COLOR-PRIMARY);
+  color: #fff;
+  border-radius: 10rem;
+}
+
+.schedule {
+  &_wrapper {
+    width: 70rem;
+    height: 64.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_calendar {
   }
 }

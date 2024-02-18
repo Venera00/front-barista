@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import codeValidationSchema from "../../helpers/yup/codeValidationSchema";
 import images from "../../assets/images";
+import useLoginStore from "../../stores/loginStore";
 import styles from "./CodeLoginPage.module.scss";
 
 const CodeLoginPage = ({ updateStatus }) => {
