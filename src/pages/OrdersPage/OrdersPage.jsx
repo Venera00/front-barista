@@ -52,22 +52,24 @@ const OrdersPage = () => {
       <div className={styles.ordertype_container}>
         <div className={styles.ordertype_wrapper}>
           <h3 className={styles.orders_title}>Заказы</h3>
-          <button
-            className={`${styles.orderplace_btn} ${styles.takeaway_btn} ${
-              selectedOrderType === "takeaway" ? styles.selectedOrderType : ""
-            }`}
-            onClick={() => handleOrderTypeSelection("takeaway")}
-          >
-            На вынос
-          </button>
-          <button
-            className={`${styles.orderplace_btn} ${styles.inplace_btn} ${
-              selectedOrderType === "inplace" ? styles.selectedOrderType : ""
-            }`}
-            onClick={() => handleOrderTypeSelection("inplace")}
-          >
-            В заведении
-          </button>
+          <div className={styles.ordertypebtns_wrapper}>
+            <button
+              className={`${styles.orderplace_btn} ${styles.takeaway_btn} ${
+                selectedOrderType === "takeaway" ? styles.selectedOrderType : ""
+              }`}
+              onClick={() => handleOrderTypeSelection("takeaway")}
+            >
+              На вынос
+            </button>
+            <button
+              className={`${styles.orderplace_btn} ${styles.inplace_btn} ${
+                selectedOrderType === "inplace" ? styles.selectedOrderType : ""
+              }`}
+              onClick={() => handleOrderTypeSelection("inplace")}
+            >
+              В заведении
+            </button>
+          </div>
           <img
             src={images.bellIcon}
             alt="The notifications"
