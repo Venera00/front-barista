@@ -4,6 +4,7 @@ import SidebarMain from "../../components/sideBar/sidebarMain";
 import NewOrderCard from "../../components/orderCard/newOrderCard";
 
 import SidebarOrderItems from "../../components/sidebarOrderItems/SidebarOrderItems";
+import classNames from "classnames";
 import styles from "./OrdersPage.module.scss";
 
 const OrdersPage = () => {
@@ -54,17 +55,21 @@ const OrdersPage = () => {
           <h3 className={styles.orders_title}>Заказы</h3>
           <div className={styles.ordertypebtns_wrapper}>
             <button
-              className={`${styles.orderplace_btn} ${styles.takeaway_btn} ${
-                selectedOrderType === "takeaway" ? styles.selectedOrderType : ""
-              }`}
+              className={classNames(
+                styles.orderplace_btn,
+                styles.takeaway_btn,
+                {
+                  [styles.selectedOrderType]: selectedOrderType === "takeaway",
+                }
+              )}
               onClick={() => handleOrderTypeSelection("takeaway")}
             >
               На вынос
             </button>
             <button
-              className={`${styles.orderplace_btn} ${styles.inplace_btn} ${
-                selectedOrderType === "inplace" ? styles.selectedOrderType : ""
-              }`}
+              className={classNames(styles.orderplace_btn, styles.inplace_btn, {
+                [styles.selectedOrderType]: selectedOrderType === "inplace",
+              })}
               onClick={() => handleOrderTypeSelection("inplace")}
             >
               В заведении
@@ -86,42 +91,63 @@ const OrdersPage = () => {
               onClick={handleShowNewOrders}
             >
               <span
-                className={`${styles.order_status} ${styles.status_new}`}
+                className={classNames(styles.order_status, styles.status_new)}
               ></span>
               Новые
             </button>
             <button
-              className={`${styles.orderstatus_btn} ${styles.orderstatus_inprocess}`}
+              className={classNames(
+                styles.orderstatus_btn,
+                styles.orderstatus_inprocess
+              )}
             >
               <span
-                className={` ${styles.order_status} ${styles.status_inprocess}`}
+                className={classNames(
+                  styles.order_status,
+                  styles.status_inprocess
+                )}
               ></span>
               В процессе
             </button>
             {selectedOrderType === "takeaway" ? null : (
               <button
-                className={`${styles.orderstatus_btn} ${styles.orderstatus_ready}`}
+                className={classNames(
+                  styles.orderstatus_btn,
+                  styles.orderstatus_ready
+                )}
               >
                 <span
-                  className={`${styles.order_status} ${styles.status_ready}`}
+                  className={classNames(
+                    styles.order_status,
+                    styles.status_ready
+                  )}
                 ></span>
                 Готово
               </button>
             )}
 
             <button
-              className={`${styles.orderstatus_btn} ${styles.orderstatus_cancelled}`}
+              className={classNames(
+                styles.orderstatus_btn,
+                styles.orderstatus_cancelled
+              )}
             >
               <span
-                className={`${styles.order_status} ${styles.status_cancelled}`}
+                className={classNames(
+                  styles.order_status,
+                  styles.status_cancelled
+                )}
               ></span>
               Отменено
             </button>
             <button
-              className={`${styles.orderstatus_btn} ${styles.orderstatus_done}`}
+              className={classNames(
+                styles.orderstatus_btn,
+                styles.orderstatus_done
+              )}
             >
               <span
-                className={`${styles.order_status} ${styles.status_done}`}
+                className={classNames(styles.order_status, styles.status_done)}
               ></span>
               Завершено
             </button>
