@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 
 const useLoginStore = create((set) => ({
   isLoggedIn: false,
@@ -7,3 +7,5 @@ const useLoginStore = create((set) => ({
     //TODO: write the logic
   },
 }));
+
+export default useLoginStore;
