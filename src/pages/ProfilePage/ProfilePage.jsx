@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SidebarMain from "../../components/sideBar/sidebarMain";
 import images from "../../assets/images";
 import classNames from "classnames";
@@ -8,6 +8,24 @@ import styles from "./ProfilePage.module.scss";
 const ProfilePage = () => {
   const [selectedBtn, setSelectedBtn] = useState("profile");
   const [showSchedule, setShowSchedule] = useState(false);
+
+  const [employee, setEmployee] = useState({
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    dateOfBirth: "",
+  });
+
+  useEffect(() => {
+    const mockEmployeeData = {
+      firstName: "Алихандро",
+      lastName: "Бутовски",
+      phoneNumber: "555 555 555",
+      dateOfBirth: "14.03.1998",
+    };
+
+    setEmployee(mockEmployeeData);
+  }, []);
 
   const handleBtnSelection = (info) => {
     setSelectedBtn(info);
@@ -54,16 +72,56 @@ const ProfilePage = () => {
 
         {selectedBtn === "schedule" ? null : (
           <section className={styles.about}>
-            <div className={styles.about_wrapper}>
+            <form className={styles.about_wrapper}>
               <h3>Личные данные</h3>
-              <div>
-                <label htmlFor="">Имя</label>
-                <div>Алихандро</div>
-                <div>555 555 555</div>
-                <div>Фамилия</div>
-                <div>14.03.1998</div>
+              <div className={styles.aboutContent_wrapper}>
+                <div>
+                  <label htmlFor="">Имя</label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    className={styles.about__input}
+                    value={employee.firstName}
+                    readOnly
+                  />
+                </div>
+                <div>
+                  <label htmlFor="lastname">Фамилия</label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    className={styles.about__input}
+                    value={employee.lastName}
+                    readOnly
+                  />
+                </div>
+                <div>
+                  <label htmlFor="">Номер телефона</label>
+                  <input
+                    type="text"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    className={styles.about__input}
+                    value={employee.phoneNumber}
+                    readOnly
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="dateOfBirth">Дата рождения</label>
+                  <input
+                    type="text"
+                    name="dateOfBirth"
+                    id="dateOfBirth"
+                    className={styles.about__input}
+                    value={employee.dateOfBirth}
+                    readOnly
+                  />
+                </div>
               </div>
-            </div>
+            </form>
           </section>
         )}
 
