@@ -4,11 +4,13 @@
   justify-content: space-between;
   position: relative;
   overflow: hidden;
+  max-width: 144rem;
 }
 
 .login__img {
-  //   width: 72.4rem;
+  max-width: 72.4rem;
   margin: 1.6rem;
+  display: block;
 }
 
 .login__icon {
@@ -78,4 +80,10 @@
 .button__disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 8px;
+  }
 }
