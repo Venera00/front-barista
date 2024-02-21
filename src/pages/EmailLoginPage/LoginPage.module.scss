@@ -4,20 +4,17 @@
   justify-content: space-between;
   position: relative;
   overflow: hidden;
-  max-width: 144rem;
-  height: 100ch;
-}
-
-.loginImg_wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // max-width: 144rem;
+  width: 100%;
+  height: 100vh;
 }
 
 .login__img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: 100vh;
+  margin: 1rem;
+  // margin: 1.6rem; по фигме так
+  flex: 1;
 }
 
 .login__icon {
@@ -31,8 +28,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  //flex: 1;//
-  overflow-y: auto;
+  flex: 1;
   padding: 1rem;
 }
 
