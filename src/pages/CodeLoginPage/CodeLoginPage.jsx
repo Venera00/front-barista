@@ -32,7 +32,8 @@ const CodeLoginPage = ({ updateStatus }) => {
           {({ isSubmitting, errors, touched, isValid }) => (
             <Form className={styles.emailForm}>
               <h2 className={styles.login__title}>
-                Код <br /> подтверждения
+                Код <br />
+                подтверждения
               </h2>
               <div className={styles.container}>
                 <div className={styles.inputContainer}>

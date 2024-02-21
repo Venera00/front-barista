@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import images from "../../assets/images";
+import classNames from "classnames";
 import styles from "./SideBarMain.module.scss";
 import { NavLink } from "react-router-dom";
 
@@ -9,6 +10,7 @@ const SidebarMain = () => {
   const handleNavlinkClick = (link) => {
     setActive(link);
   };
+
   return (
     <div>
       <div className={styles.sidebar}>
@@ -20,10 +22,12 @@ const SidebarMain = () => {
         <div className={styles.sidebar_items}>
           <div>
             <NavLink
-              // exact
+              exact
               to="/orders"
-              className={styles.navlink}
-              activeClassName={styles.active}
+              className={classNames(styles.navlink, {
+                [styles.active]: active === "/orders",
+              })}
+              // activeClassName={styles.active}
               onClick={() => handleNavlinkClick("/orders")}
             >
               <img src={images.ordersIcon} alt="Orders Icon" />
@@ -31,8 +35,10 @@ const SidebarMain = () => {
             </NavLink>
             <NavLink
               to="/menu"
-              className={styles.navlink}
-              activeClassName={styles.active}
+              className={classNames(styles.navlink, {
+                [styles.active]: active === "/menu",
+              })}
+              // activeClassName={styles.active}
               onClick={() => handleNavlinkClick("/menu")}
             >
               <img src={images.menuIcon} alt="Menu Icon" />
@@ -40,8 +46,10 @@ const SidebarMain = () => {
             </NavLink>
             <NavLink
               to="/profile"
-              className={styles.navlink}
-              activeClassName={styles.active}
+              className={classNames(styles.navlink, {
+                [styles.active]: active === "/profile",
+              })}
+              // activeClassName={styles.active}
               onClick={() => handleNavlinkClick("/profile")}
             >
               <img src={images.profileIcon} alt="Profile Icon" />

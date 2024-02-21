@@ -11,9 +11,10 @@
 .sidebar_items {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   align-items: center;
   justify-content: space-between;
-  gap: 40rem;
+  // height: 100%;
 }
 
 .navlink {
