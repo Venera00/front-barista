@@ -16,17 +16,19 @@ const NewOrderCard = ({ order, onClick }) => {
   return (
     <div className={styles.neworder_card} onClick={onClick}>
       <div className={styles.order_content}>
-        <img
-          src={hover ? images.closeIconWhite : images.closeIcon}
-          alt="Close"
-          className={styles.close_btn}
-        />
-        <h3 className={styles.order_number}>{order.number}</h3>
-        <p className={styles.waiter_name}>{order.waiter}</p>
-        <p className={styles.order_desc}>{order.first_description}</p>
-        <p className={styles.order_desc}>{order.second_description}</p>
-        <p className={styles.order_desc}>{order.third_description}</p>
-        <p className={styles.order_more}>Еще</p>
+        <div>
+          <img
+            src={hover ? images.closeIconWhite : images.closeIcon}
+            alt="Close"
+            className={styles.close_btn}
+          />
+          <h3 className={styles.order_number}>{order.number}</h3>
+          <p className={styles.waiter_name}>{order.waiter}</p>
+          <p className={styles.order_desc}>{order.first_description}</p>
+          <p className={styles.order_desc}>{order.second_description}</p>
+          <p className={styles.order_desc}>{order.third_description}</p>
+          <p className={styles.order_more}>Еще</p>
+        </div>
 
         <button className={styles.neworder_btn}>Принять</button>
       </div>

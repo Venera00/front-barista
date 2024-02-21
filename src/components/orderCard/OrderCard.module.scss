@@ -19,6 +19,10 @@
 
 .order_content {
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
 }
 
 .close_btn {
@@ -56,7 +60,7 @@
   font-size: 1.6rem;
   font-weight: 400;
   color: var(--COLOR-PRIMARY);
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
 }
 
 .neworder_btn {
@@ -67,6 +71,8 @@
   cursor: pointer;
   background-color: #fff;
   color: var(--COLOR-PRIMARY);
+  font-weight: 400;
+  font-size: 1.6rem;
 }
 
 .neworder_card:hover .neworder_btn {

@@ -11,6 +11,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 html {
@@ -19,6 +20,7 @@ html {
 
 body {
   color: #2a3440;
+  font-family: "Poppins", sans-serif;
 }
 
 .flex {

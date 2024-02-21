@@ -42,7 +42,7 @@ const ProfilePage = () => {
     <div className={styles.profile_container}>
       <SidebarMain />
 
-      <div>
+      <div className={styles.profile_content}>
         <header className={styles.header}>
           <h3 className={styles.header_title}>Профиль</h3>
           <div className={styles.btn}>
@@ -128,8 +128,27 @@ const ProfilePage = () => {
         {showSchedule && (
           <section className={styles.schedule}>
             <div className={styles.schedule_wrapper}>
-              <p>Рабочий день</p>
-              <p>Выходной</p>
+              <div className={styles.schedule_titles}>
+                <div className={styles.titles_wrapper}>
+                  <span
+                    className={classNames(
+                      styles.schedule_status,
+                      styles.weekday
+                    )}
+                  ></span>
+                  <p>Рабочий день</p>
+                </div>
+                <div className={classNames(styles.titles_wrapper)}>
+                  <span
+                    className={classNames(
+                      styles.schedule_status,
+                      styles.weekend
+                    )}
+                  ></span>
+                  <p>Выходной</p>
+                </div>
+              </div>
+
               <Calendar className={styles.schedule_calendar} />
             </div>
           </section>
