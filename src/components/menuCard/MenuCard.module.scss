@@ -48,3 +48,20 @@
     cursor: pointer;
   }
 }
+
+.counter {
+  width: 33rem;
+  height: 14rem;
+  border-radius: 1.6rem;
+  background-color: var(--COLOR-PRIMARY);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &___remove,
+  &__add {
+    width: 2.8rem;
+    color: #fff;
+    background-color: var(--COLOR-PRIMARY);
+  }
+}
