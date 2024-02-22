@@ -1,26 +1,28 @@
 import React, { useState } from "react";
 import images from "../../assets/images";
 import classNames from "classnames";
+import { NavLink, useNavigate } from "react-router-dom";
+import { Menu, Layout } from "antd";
 import styles from "./SideBarMain.module.scss";
-import { NavLink } from "react-router-dom";
 
 const SidebarMain = () => {
-  const [active, setActive] = useState("/orders");
+  // const [active, setActive] = useState("/orders");
 
-  const handleNavlinkClick = (link) => {
-    setActive(link);
-  };
+  // const handleNavlinkClick = (link) => {
+  //   setActive(link);
+  // };
+
+  const navigate = useNavigate();
 
   return (
-    <div>
-      <div className={styles.sidebar}>
-        <img
-          src={images.neocafeMainIcon}
-          alt="Neocafe Icon"
-          className={styles.main_icon}
-        />
-        <div className={styles.sidebar_items}>
-          <div>
+    <Layout className={styles.sidebar}>
+      <img
+        src={images.neocafeMainIcon}
+        alt="Neocafe Icon"
+        className={styles.main_icon}
+      />
+
+      {/* <div>
             <NavLink
               exact
               to="/orders"
@@ -55,15 +57,87 @@ const SidebarMain = () => {
               <img src={images.profileIcon} alt="Profile Icon" />
               <p>Профиль</p>
             </NavLink>
-          </div>
+          </div> */}
 
-          <div className={`${styles.logout_wrapper} ${styles.navlink}`}>
-            <img src={images.logoutIcon} alt="Logout" />
-            <p>Выйти</p>
-          </div>
-        </div>
-      </div>
-    </div>
+      <Menu
+        onClick={({ key }) => {
+          if (key === "logout") {
+            // TODO: show logout modal
+          } else {
+            navigate(key);
+          }
+        }}
+        defaultSelectedKeys={[window.location.pathname]}
+        className={styles.sidebar_items}
+      >
+        <Menu.Item
+          key="/orders"
+          icon={<img src={images.ordersIcon} alt="Orders Icon" />}
+          className={styles.navlink}
+        >
+          Заказы
+        </Menu.Item>
+        <Menu.Item
+          key="/menu"
+          icon={<img src={images.menuIcon} alt="Menu Icon" />}
+          className={styles.navlink}
+        >
+          Меню
+        </Menu.Item>
+        <Menu.Item
+          key="/profile"
+          icon={<img src={images.profileIcon} alt="Profile Icon" />}
+          className={styles.navlink}
+        >
+          Профиль
+        </Menu.Item>
+
+        <Menu.Item
+          key="logout"
+          icon={<img src={images.logoutIcon} alt="Logout" />}
+        >
+          Выйти
+        </Menu.Item>
+      </Menu>
+
+      {/* <Menu
+        onClick={({ key }) => {
+          if (key === "logout") {
+            // TODO: show logout modal
+          } else {
+            navigate(key);
+          }
+        }}
+        defaultSelectedKeys={[window.location.pathname]}
+        items={[
+          {
+            label: "Orders",
+            key: "/orders",
+            icon: <img src={images.ordersIcon} alt="Orders Icon" />,
+            className: styles.navlink,
+          },
+          {
+            label: "Меню",
+            key: "/menu",
+            icon: <img src={images.menuIcon} alt="Menu Icon" />,
+            className: styles.navlink,
+          },
+          {
+            label: "Профиль",
+            key: "/profile",
+            icon: <img src={images.profileIcon} alt="Profile Icon" />,
+            className: styles.navlink,
+          },
+          {
+            label: "Выйти",
+            key: "logout",
+            icon: <img src={images.logoutIcon} alt="Logout" />,
+            className: styles.navlink,
+          },
+        ]}
+        className={styles.sidebar_items}
+      ></Menu> */}
+    </Layout>
   );
 };
 

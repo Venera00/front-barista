@@ -11,10 +11,10 @@
 .sidebar_items {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   align-items: center;
-  justify-content: space-between;
-  // height: 100%;
+  // justify-content: space-between;
+  height: 100vh;
+  background-color: var(--COLOR-MAIN);
 }
 
 .navlink {
@@ -29,23 +29,23 @@
   border: none;
   text-decoration: none;
 
-  &:hover {
-    background-color: var(--COLOR-PRIMARY);
-  }
+  // &:hover {
+  //   background-color: var(--COLOR-PRIMARY);
+  // }
 
-  &.active {
-    background-color: var(--COLOR-PRIMARY);
-  }
+  // &.active {
+  //   background-color: var(--COLOR-PRIMARY);
+  // }
 
-  img {
-    padding-left: 1rem;
-  }
+  // img {
+  //   padding-left: 1rem;
+  // }
 
-  p {
-    font-size: 1.8rem;
-    font-weight: 500;
-    color: #ffffff;
-  }
+  // &__title {
+  //   font-size: 1.8rem;
+  //   font-weight: 500;
+  //   color: #ffffff;
+  // }
 }
 
 .orders_btn {

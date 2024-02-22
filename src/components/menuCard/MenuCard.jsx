@@ -3,6 +3,9 @@ import images from "../../assets/images";
 import styles from "./MenuCard.module.scss";
 
 const MenuCard = ({ menuItem }) => {
+  const handleBtnClick = () => {
+    console.log("Btn clicked");
+  };
   return (
     <div className={styles.menucard}>
       <img
@@ -12,11 +15,13 @@ const MenuCard = ({ menuItem }) => {
       />
 
       <div className={styles.menucard__content}>
-        <h3 className={styles.menucard__title}>{menuItem.title}</h3>
-        <p className={styles.menucard__price}>{menuItem.price}</p>
+        <div className={styles.menucard__title}>{menuItem.title}</div>
+        <div className={styles.menucard__price}>{menuItem.price}</div>
       </div>
 
-      <button className={styles.menucard__btn}>+</button>
+      <button onClick={handleBtnClick} className={styles.menucard__btn}>
+        +
+      </button>
     </div>
   );
 };

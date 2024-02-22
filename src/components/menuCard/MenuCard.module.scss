@@ -13,13 +13,14 @@
     height: 10.8rem;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     gap: 6.2rem;
-    justify-content: start;
+    justify-content: space-between;
   }
 
   &__title {
