@@ -3,6 +3,7 @@ import images from "../../assets/images";
 import classNames from "classnames";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Menu, Layout } from "antd";
+import Modal from "../Modal/Modal";
 import styles from "./SideBarMain.module.scss";
 
 const SidebarMain = () => {
@@ -11,6 +12,8 @@ const SidebarMain = () => {
   // const handleNavlinkClick = (link) => {
   //   setActive(link);
   // };
+
+  const [modalActive, setModalActive] = useState(false);
 
   const navigate = useNavigate();
 
@@ -95,6 +98,7 @@ const SidebarMain = () => {
         <Menu.Item
           key="logout"
           icon={<img src={images.logoutIcon} alt="Logout" />}
+          onClick={() => setModalActive(true)}
         >
           Выйти
         </Menu.Item>
@@ -137,6 +141,40 @@ const SidebarMain = () => {
         ]}
         className={styles.sidebar_items}
       ></Menu> */}
+
+      <Modal active={modalActive} setActive={setModalActive}>
+        <div className={styles.logout_modal}>
+          <div className={styles.modalTitle_wrapper}>
+            <h4 className={styles.logoutModal_title}>
+              Выход из учетной записи
+            </h4>
+            <img
+              src={images.closeIcon}
+              className={styles.logoutModal_close}
+              alt="Logout"
+              onClick={() => setModalActive(false)}
+            />
+          </div>
+
+          <p className={styles.logoutModal_subtitle}>
+            Вы действительно хотите выйти из учетной записи?
+          </p>
+
+          <div className={styles.logoutModal_btns}>
+            <button
+              className={classNames(styles.logoutModal_btn, styles.btn__yes)}
+            >
+              Да
+            </button>
+            <button
+              onClick={() => setModalActive(false)}
+              className={classNames(styles.logoutModal_btn, styles.btn__no)}
+            >
+              Нет
+            </button>
+          </div>
+        </div>
+      </Modal>
     </Layout>
   );
 };

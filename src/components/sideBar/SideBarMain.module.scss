@@ -68,3 +68,66 @@
 //   border: none;
 //   text-decoration: none;
 // }
+
+.logout_modal {
+  width: 60rem;
+  height: 25.8rem;
+  position: relative;
+}
+
+.modalTitle_wrapper {
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+  padding-bottom: 2.4rem;
+  padding-top: 3rem;
+}
+
+.logoutModal_title {
+  font-weight: 600;
+  font-size: 2.4rem;
+  color: var(--COLOR-BLACK);
+  text-align: center;
+}
+
+.logoutModal_close {
+  position: absolute;
+  right: 3rem;
+  top: 3.2rem;
+  cursor: pointer;
+}
+
+.logoutModal_subtitle {
+  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom: 4.8rem;
+  text-align: center;
+}
+
+.logoutModal_btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+.logoutModal_btn {
+  width: 26rem;
+  height: 5.6rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.btn__yes {
+  background-color: #fff;
+  color: var(--COLOR-PRIMARY);
+  border: 2px solid var(--COLOR-PRIMARY);
+}
+
+.btn__no {
+  background-color: var(--COLOR-PRIMARY);
+  color: #fff;
+}

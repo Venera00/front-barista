@@ -147,9 +147,11 @@ const MenuPage = () => {
         </section>
       </div>
 
-      <Modal active={modalActive} setActive={setModalActive}>
-        <h2>Hi</h2>
-      </Modal>
+      <Modal
+        active={modalActive}
+        setActive={setModalActive}
+        className={styles.additivesModal}
+      ></Modal>
     </div>
   );
 };
