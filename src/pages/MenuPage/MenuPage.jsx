@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SidebarMain from "../../components/sideBar/sidebarMain";
 import MenuCard from "../../components/menuCard/MenuCard";
+import Modal from "../../components/Modal/Modal";
 import images from "../../assets/images";
 // import { ReactComponent as CoffeeBobs } from "../../assets/coffeeBobs.svg";
 // import { ReactComponent as Bakery } from "../../assets/bakery.svg";
@@ -15,6 +16,7 @@ import styles from "./MenuPage.module.scss";
 
 const MenuPage = () => {
   const [inputSearch, setInputSearch] = useState("");
+  const [modalActive, setModalActive] = useState(false);
 
   const handleSearchInput = (e) => {
     setInputSearch(e.target.value);
@@ -130,11 +132,24 @@ const MenuPage = () => {
 
           <div className={styles.menuItem_container}>
             {newMenuItem.map((menuItem) => (
-              <MenuCard key={menuItem.id} menuItem={menuItem} />
+              <MenuCard
+                key={menuItem.id}
+                menuItem={menuItem}
+                onClick={() => setModalActive(true)}
+              />
             ))}
+          </div>
+
+          <div className={styles.orderCheck}>
+            <p className={styles.orderCheck__type}>Заказ на вынос</p>
+            <p className={styles.orderCheck__price}>0 сом</p>
           </div>
         </section>
       </div>
+
+      <Modal active={modalActive} setActive={setModalActive}>
+        <h2>Hi</h2>
+      </Modal>
     </div>
   );
 };

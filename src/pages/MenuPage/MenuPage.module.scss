@@ -5,6 +5,7 @@
 .menu {
   display: flex;
   flex-direction: column;
+  position: relative;
 
   &__header {
     display: flex;
@@ -105,4 +106,29 @@
   flex-wrap: wrap;
   margin-left: 3.2rem;
   gap: 3.2rem 2.4rem;
+}
+
+.orderCheck {
+  position: absolute;
+  bottom: 5.6rem;
+  right: 13rem;
+  width: 43rem;
+  height: 7.7rem;
+  border-radius: 10rem;
+  background-color: var(--COLOR-PRIMARY);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  &__type {
+    font-weight: 400;
+    font-size: 2.4rem;
+    color: #fff;
+  }
+
+  &__price {
+    font-weight: 600;
+    font-size: 2.4rem;
+    color: #fff;
+  }
 }

@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import images from "../../assets/images";
 import classNames from "classnames";
+import Modal from "../Modal/Modal";
 import styles from "./MenuCard.module.scss";
 
 const MenuCard = ({ menuItem }) => {
   const [showBtns, setShowBtns] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [contentVisible, setContentVisible] = useState(true);
+  // const [modalActive, setModalActive] = useState(false);
 
   const handleBtnClick = () => {
     setShowBtns(true);
@@ -24,7 +26,10 @@ const MenuCard = ({ menuItem }) => {
   };
 
   return (
-    <div className={classNames(styles.menucard)}>
+    <div
+      className={classNames(styles.menucard)}
+      // onClick={() => setModalActive(true)}
+    >
       <div
         className={classNames(styles.menucard__content, [
           !contentVisible && styles.menucardContent_hidden,
@@ -59,6 +64,10 @@ const MenuCard = ({ menuItem }) => {
           </button>
         </div>
       )}
+
+      {/* <Modal active={modalActive} setActive={setModalActive}>
+        <h2>Hi</h2>
+      </Modal> */}
     </div>
   );
 };
