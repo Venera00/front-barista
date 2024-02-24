@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import images from "../../assets/images";
+import classNames from "classnames";
 import styles from "./MenuCard.module.scss";
 
 const MenuCard = ({ menuItem }) => {
   const [showBtns, setShowBtns] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  const [contentVisible, setContentVisible] = useState(true);
 
   const handleBtnClick = () => {
     setShowBtns(true);
+    setContentVisible(false);
   };
 
   const handleAddItem = () => {
@@ -15,33 +18,42 @@ const MenuCard = ({ menuItem }) => {
   };
 
   const handleRemoveItem = () => {
-    // setShowBtns(true);
-    setQuantity(quantity - 1);
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
   };
 
   return (
-    <div className={styles.menucard}>
-      <img
-        src={menuItem.img}
-        alt="The menu item"
-        className={styles.menucard__img}
-      />
+    <div className={classNames(styles.menucard)}>
+      <div
+        className={classNames(styles.menucard__content, [
+          !contentVisible && styles.menucardContent_hidden,
+        ])}
+      >
+        <div>
+          <img
+            src={menuItem.img}
+            alt="The menu item"
+            className={styles.menucard__img}
+          />
+        </div>
 
-      <div className={styles.menucard__content}>
-        <div className={styles.menucard__title}>{menuItem.title}</div>
-        <div className={styles.menucard__price}>{menuItem.price}</div>
+        <div className={styles.menucard__info}>
+          <div className={styles.menucard__title}>{menuItem.title}</div>
+          <div className={styles.menucard__price}>{menuItem.price}</div>
+        </div>
+
+        <button onClick={handleBtnClick} className={styles.menucard__btn}>
+          +
+        </button>
       </div>
-
-      <button onClick={handleBtnClick} className={styles.menucard__btn}>
-        +
-      </button>
 
       {showBtns && (
         <div className={styles.counter}>
           <button onClick={handleRemoveItem} className={styles.counter__remove}>
             -
           </button>
-          <p>{quantity}</p>
+          <p className={styles.counter__title}>{quantity}</p>
           <button onClick={handleAddItem} className={styles.counter__add}>
             +
           </button>
