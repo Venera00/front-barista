@@ -103,12 +103,17 @@
 
 .orderstatus_new {
   width: 15.6rem;
-  background-color: var(--COLOR-PRIMARY);
-  color: #ffffff;
+  // background-color: var(--COLOR-PRIMARY);
+  // color: #ffffff;
 }
 
 .status_new {
   background-color: #85caff;
+}
+
+.selectedStatus {
+  background-color: var(--COLOR-PRIMARY);
+  color: #fff;
 }
 
 .orderstatus_inprocess {

@@ -10,8 +10,8 @@ import styles from "./OrdersPage.module.scss";
 const OrdersPage = () => {
   const [selectedOrderType, setSelectedOrderType] = useState("takeaway");
   const [showNewOrders, setShowNewOrders] = useState(true);
-
   const [sidebar, setSidebar] = useState(false);
+  const [activeStatus, setActiveStatus] = useState("new");
 
   const showSidebar = () => setSidebar(!sidebar);
 
@@ -19,8 +19,13 @@ const OrdersPage = () => {
     setSelectedOrderType(ordertype);
   };
 
+  const handleStatus = (status) => {
+    setActiveStatus(status);
+  };
+
   const handleShowNewOrders = () => {
     setShowNewOrders(true);
+    setActiveStatus("new");
   };
 
   const newOrders = [
@@ -98,8 +103,12 @@ const OrdersPage = () => {
             <button
               className={classNames(
                 styles.orderstatus_btn,
-                styles.orderstatus_inprocess
+                styles.orderstatus_inprocess,
+                {
+                  [styles.selectedStatus]: activeStatus === "inprocess",
+                }
               )}
+              onClick={() => handleStatus("inprocess")}
             >
               <span
                 className={classNames(
@@ -113,8 +122,12 @@ const OrdersPage = () => {
               <button
                 className={classNames(
                   styles.orderstatus_btn,
-                  styles.orderstatus_ready
+                  styles.orderstatus_ready,
+                  {
+                    [styles.selectedStatus]: activeStatus === "ready",
+                  }
                 )}
+                onClick={() => handleStatus("ready")}
               >
                 <span
                   className={classNames(
@@ -129,8 +142,12 @@ const OrdersPage = () => {
             <button
               className={classNames(
                 styles.orderstatus_btn,
-                styles.orderstatus_cancelled
+                styles.orderstatus_cancelled,
+                {
+                  [styles.selectedStatus]: activeStatus === "cancelled",
+                }
               )}
+              onClick={() => handleStatus("cancelled")}
             >
               <span
                 className={classNames(
@@ -143,8 +160,12 @@ const OrdersPage = () => {
             <button
               className={classNames(
                 styles.orderstatus_btn,
-                styles.orderstatus_done
+                styles.orderstatus_done,
+                {
+                  [styles.selectedStatus]: activeStatus === "done",
+                }
               )}
+              onClick={() => handleStatus("done")}
             >
               <span
                 className={classNames(styles.order_status, styles.status_done)}
