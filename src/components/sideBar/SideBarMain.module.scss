@@ -12,41 +12,42 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  // justify-content: space-between;
-  height: 100vh;
-  background-color: var(--COLOR-MAIN);
-}
-
-.navlink {
-  width: 15.7rem;
-  height: 4.8rem;
-  display: flex;
-  align-items: center;
+  justify-content: space-between;
   gap: 1.2rem;
   background-color: var(--COLOR-MAIN);
-  border-radius: 1.2rem;
-  cursor: pointer;
-  border: none;
-  text-decoration: none;
-
-  // &:hover {
-  //   background-color: var(--COLOR-PRIMARY);
-  // }
-
-  // &.active {
-  //   background-color: var(--COLOR-PRIMARY);
-  // }
-
-  // img {
-  //   padding-left: 1rem;
-  // }
-
-  // &__title {
-  //   font-size: 1.8rem;
-  //   font-weight: 500;
-  //   color: #ffffff;
-  // }
+  position: relative;
 }
+
+// .navlink {
+//   width: 15.7rem;
+//   height: 4.8rem;
+//   display: flex;
+//   align-items: center;
+//   gap: 1.2rem;
+//   background-color: var(--COLOR-MAIN);
+//   border-radius: 1.2rem;
+//   cursor: pointer;
+//   border: none;
+//   text-decoration: none;
+
+//   &:hover {
+//     background-color: var(--COLOR-PRIMARY);
+//   }
+
+//   &.active {
+//     background-color: var(--COLOR-PRIMARY);
+//   }
+
+//   img {
+//     padding-left: 1rem;
+//   }
+
+//   &__title {
+//     font-size: 1.8rem;
+//     font-weight: 500;
+//     color: #ffffff;
+//   }
+// }
 
 .orders_btn {
   background-color: var(--COLOR-PRIMARY);
@@ -54,20 +55,6 @@
   font-weight: 500;
   font-size: 1.8rem;
 }
-
-// .logout_wrapper {
-//   width: 15.7rem;
-//   height: 4.8rem;
-//   display: flex;
-//   align-items: center;
-//   justify-content: start;
-//   gap: 1.2rem;
-//   background-color: var(--COLOR-MAIN);
-//   border-radius: 1.2rem;
-//   cursor: pointer;
-//   border: none;
-//   text-decoration: none;
-// }
 
 .logout_modal {
   width: 60rem;
@@ -130,4 +117,9 @@
 .btn__no {
   background-color: var(--COLOR-PRIMARY);
   color: #fff;
+}
+
+.logout {
+  position: absolute;
+  top: 30rem;
 }

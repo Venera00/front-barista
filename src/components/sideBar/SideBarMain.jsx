@@ -7,90 +7,93 @@ import Modal from "../Modal/Modal";
 import styles from "./SideBarMain.module.scss";
 
 const SidebarMain = () => {
-  // const [active, setActive] = useState("/orders");
-
-  // const handleNavlinkClick = (link) => {
-  //   setActive(link);
-  // };
-
+  const [activeMenuItem, setActiveMenuItem] = useState("/orders");
   const [modalActive, setModalActive] = useState(false);
+
+  const handleNavlinkClick = (key) => {
+    setActiveMenuItem(key);
+    console.log("Clicked", key);
+  };
 
   const navigate = useNavigate();
 
+  const menuItem = {
+    width: "15.7rem",
+    height: "4.8rem",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "start",
+    fontSize: "1.8rem",
+    fontWeight: "500",
+    borderRadius: "1.2rem",
+    cursor: "pointer",
+    border: "none",
+    textDecoration: "none",
+    color: "#fff",
+    backgroundColor: "var(--COLOR-MAIN)",
+  };
+
   return (
-    <Layout className={styles.sidebar}>
-      <img
-        src={images.neocafeMainIcon}
-        alt="Neocafe Icon"
-        className={styles.main_icon}
-      />
-
-      {/* <div>
-            <NavLink
-              exact
-              to="/orders"
-              className={classNames(styles.navlink, {
-                [styles.active]: active === "/orders",
-              })}
-              // activeClassName={styles.active}
-              onClick={() => handleNavlinkClick("/orders")}
-            >
-              <img src={images.ordersIcon} alt="Orders Icon" />
-              <p>Заказы</p>
-            </NavLink>
-            <NavLink
-              to="/menu"
-              className={classNames(styles.navlink, {
-                [styles.active]: active === "/menu",
-              })}
-              // activeClassName={styles.active}
-              onClick={() => handleNavlinkClick("/menu")}
-            >
-              <img src={images.menuIcon} alt="Menu Icon" />
-              <p>Меню</p>
-            </NavLink>
-            <NavLink
-              to="/profile"
-              className={classNames(styles.navlink, {
-                [styles.active]: active === "/profile",
-              })}
-              // activeClassName={styles.active}
-              onClick={() => handleNavlinkClick("/profile")}
-            >
-              <img src={images.profileIcon} alt="Profile Icon" />
-              <p>Профиль</p>
-            </NavLink>
-          </div> */}
-
+    <div className={styles.sidebar}>
       <Menu
         onClick={({ key }) => {
           if (key === "logout") {
             // TODO: show logout modal
           } else {
+            handleNavlinkClick(key);
             navigate(key);
           }
         }}
-        defaultSelectedKeys={[window.location.pathname]}
+        defaultSelectedKeys={[activeMenuItem]}
         className={styles.sidebar_items}
       >
+        <img
+          src={images.neocafeMainIcon}
+          alt="Neocafe Icon"
+          className={styles.main_icon}
+        />
         <Menu.Item
           key="/orders"
           icon={<img src={images.ordersIcon} alt="Orders Icon" />}
-          className={styles.navlink}
+          onClick={() => handleNavlinkClick("/orders")}
+          // className={styles.menuItem}
+          style={{
+            ...menuItem,
+            backgroundColor:
+              activeMenuItem === "/orders"
+                ? "var(--COLOR-PRIMARY)"
+                : "var(--COLOR-MAIN)",
+          }}
         >
           Заказы
         </Menu.Item>
         <Menu.Item
           key="/menu"
           icon={<img src={images.menuIcon} alt="Menu Icon" />}
-          className={styles.navlink}
+          onClick={() => handleNavlinkClick("/menu")}
+          // className={styles.menuItem}
+          style={{
+            ...menuItem,
+            backgroundColor:
+              activeMenuItem === "/menu"
+                ? "var(--COLOR-PRIMARY)"
+                : "var(--COLOR-MAIN)",
+          }}
         >
           Меню
         </Menu.Item>
         <Menu.Item
           key="/profile"
           icon={<img src={images.profileIcon} alt="Profile Icon" />}
-          className={styles.navlink}
+          onClick={() => handleNavlinkClick("/profile")}
+          // className={styles.menuItem}
+          style={{
+            ...menuItem,
+            backgroundColor:
+              activeMenuItem === "/profile"
+                ? "var(--COLOR-PRIMARY)"
+                : "var(--COLOR-MAIN)",
+          }}
         >
           Профиль
         </Menu.Item>
@@ -99,10 +102,55 @@ const SidebarMain = () => {
           key="logout"
           icon={<img src={images.logoutIcon} alt="Logout" />}
           onClick={() => setModalActive(true)}
+          className={styles.logout}
+          style={{
+            ...menuItem,
+            backgroundColor:
+              activeMenuItem === "logout"
+                ? "var(--COLOR-PRIMARY)"
+                : "var(--COLOR-MAIN)",
+          }}
         >
           Выйти
         </Menu.Item>
       </Menu>
+
+      {/* <div>
+        <NavLink
+          exact
+          to="/orders"
+          className={classNames(styles.navlink, {
+            [styles.active]: active === "/orders",
+          })}
+          // activeClassName={styles.active}
+          onClick={() => handleNavlinkClick("/orders")}
+        >
+          <img src={images.ordersIcon} alt="Orders Icon" />
+          <p>Заказы</p>
+        </NavLink>
+        <NavLink
+          to="/menu"
+          className={classNames(styles.navlink, {
+            [styles.active]: active === "/menu",
+          })}
+          // activeClassName={styles.active}
+          onClick={() => handleNavlinkClick("/menu")}
+        >
+          <img src={images.menuIcon} alt="Menu Icon" />
+          <p>Меню</p>
+        </NavLink>
+        <NavLink
+          to="/profile"
+          className={classNames(styles.navlink, {
+            [styles.active]: active === "/profile",
+          })}
+          // activeClassName={styles.active}
+          onClick={() => handleNavlinkClick("/profile")}
+        >
+          <img src={images.profileIcon} alt="Profile Icon" />
+          <p>Профиль</p>
+        </NavLink>
+      </div> */}
 
       {/* <Menu
         onClick={({ key }) => {
@@ -175,7 +223,7 @@ const SidebarMain = () => {
           </div>
         </div>
       </Modal>
-    </Layout>
+    </div>
   );
 };
 
