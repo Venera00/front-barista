@@ -136,4 +136,136 @@
 .additivesModal {
   width: 60rem;
   height: 55.2rem;
+  padding: 3rem;
+
+  &_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3.8rem;
+  }
+
+  & h3 {
+    font-weight: 700;
+    font-size: 2.4rem;
+  }
+}
+
+.additives {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25.2rem;
+  height: 3.9rem;
+  gap: 1.2rem;
+  // border-bottom: 1px solid #cccccc;
+
+  &_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3.2rem;
+  }
+
+  &_radioBtn {
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 50%;
+    border: 1px solid #ff8b5b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .checkmark {
+    width: 11px;
+    height: 11px;
+    background-color: #ff8b5b;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &_radioBtn input {
+    display: none;
+  }
+
+  &_radioBtn input:checked + .checkmark {
+    opacity: 1;
+  }
+
+  &_line {
+    width: 100%;
+    display: flex;
+    gap: 1.2rem;
+    border-bottom: 1px solid #cccccc;
+  }
+
+  &_title {
+    font-weight: 400;
+    font-size: 2rem;
+    color: #5b7e9a;
+    padding-bottom: 1.5rem;
+  }
+
+  &_ingredient,
+  &_price {
+    font-weight: 400;
+    font-size: 2rem;
+    color: var(--COLOR-BLACK);
+  }
+
+  &_price {
+    color: #5b7e9a;
+  }
+
+  &_sirop {
+    margin-top: 4rem;
+  }
+
+  &_footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8rem;
+    gap: 1.6rem;
+  }
+}
+
+.counter {
+  width: 12.8rem;
+  height: 5.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  background-color: var(--COLOR-PRIMARY);
+  color: #fff;
+  font-weight: 600;
+  font-size: 2rem;
+  border-radius: 10rem;
+
+  &__remove,
+  &__add {
+    border: none;
+    background-color: var(--COLOR-PRIMARY);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 2rem;
+  }
+}
+
+.footer_addBtn {
+  width: 39.2rem;
+  height: 5.6rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+  background-color: var(--COLOR-PRIMARY);
+  border: none;
+  color: #fff;
+  border-radius: 10rem;
+  cursor: pointer;
 }
