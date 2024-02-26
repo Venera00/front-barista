@@ -6,7 +6,7 @@ const initialState = {
 };
 
 const loginSlice = createSlice({
-  // email: 'email',
+  name: "login",
   initialState,
   reducers: {},
 });
