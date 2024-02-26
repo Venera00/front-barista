@@ -5,7 +5,7 @@
 }
 
 .profile_content {
-  height: 100vh;
+  // height: 100vh;
 }
 
 .header {
@@ -56,11 +56,12 @@
 .about,
 .schedule {
   background-color: var(--COLOR-GRAY);
-  height: 100%;
+  height: calc(100% - 102px);
   width: 100%;
   display: flex;
-  align-items: center;
+  // align-items: center;
   justify-content: center;
+  padding-top: 4rem;
 
   &_wrapper {
     max-width: 70.6rem;
@@ -97,6 +98,9 @@
   }
 
   &_calendar {
+    width: 58.4rem;
+    height: 40.8rem;
+    display: block;
   }
 }
 
