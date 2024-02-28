@@ -16,8 +16,13 @@ const LoginPage = () => {
 
   return (
     <div className={styles.loginContainer}>
-      <img src={images.loginImg} className={styles.login__img} alt="The cafe" />
-
+      <div className={styles.loginImg_wrapper}>
+        <img
+          src={images.loginImg}
+          className={styles.login__img}
+          alt="The cafe"
+        />
+      </div>
       <div className={styles.login__icon}>
         <img src={images.neocafeIconLogin} alt="The neocafe" />
       </div>
