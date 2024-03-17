@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SidebarMain from "../../components/sideBar/sidebarMain";
+import SidebarMain from "../../components/SideBar/SidebarMain";
 import MenuCard from "../../components/menuCard/MenuCard";
 import Modal from "../../components/Modal/Modal";
 import classNames from "classnames";
