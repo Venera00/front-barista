@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import images from "../../assets/images";
-import SidebarMain from "../../components/SideBar/SideBarMain";
+import SidebarMain from "../../components/sideBar/SideBarMain";
 import NewOrderCard from "../../components/OrderCard/NewOrderCard";
 import SidebarOrderItems from "../../components/SidebarOrderItems/SidebarOrderItems";
 import Modal from "../../components/Modal/Modal";
