@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import images from "../../assets/images";
-// import SidebarMain from "../../components/sideBar/sidebarMain";
 import SidebarMain from "../../components/sideBar/SideBarMain";
-import NewOrderCard from "../../components/orderCard/NewOrderCard";
+import NewOrderCard from "../../components/OrderCard/newOrderCard";
 import SidebarOrderItems from "../../components/sidebarOrderItems/SidebarOrderItems";
 import Modal from "../../components/Modal/Modal";
 import classNames from "classnames";
