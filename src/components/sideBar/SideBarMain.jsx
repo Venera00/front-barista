@@ -117,47 +117,65 @@ const SidebarMain = () => {
       </Menu> */}
 
       <div className={styles.sidebar_content}>
-        <div>
+        <div className={styles.navlink_wrapper}>
           <NavLink
             exact
             to="/orders"
-            className={classNames(styles.navlink, {
-              [styles.active]: active === "/orders",
-            })}
-            activeClassName={styles.active}
+            // className={classNames(styles.navlink, {
+            // [styles.active]: active === "/orders",
+            // })}
+            // activeClassName={styles.active}
             // onClick={() => handleNavlinkClick("/orders")}
+
+            className={({ isActive }) =>
+              [
+                styles.navlink,
+                isActive ? styles.navlink__active : styles.navlink,
+              ].join(" ")
+            }
           >
             <img src={images.ordersIcon} alt="Orders Icon" />
-            <p>Заказы</p>
+            <p className={styles.navlink__title}>Заказы</p>
           </NavLink>
+          {/* </div> */}
+
+          {/* <div className={styles.navlink_wrapper}> */}
           <NavLink
             to="/menu"
-            className={classNames(styles.navlink, {
-              [styles.active]: active === "/menu",
-            })}
-            activeClassName={styles.active}
-            // onClick={() => handleNavlinkClick("/menu")}
+            className={({ isActive }) =>
+              [
+                styles.navlink,
+                isActive ? styles.navlink__active : styles.navlink,
+              ].join(" ")
+            }
           >
             <img src={images.menuIcon} alt="Menu Icon" />
-            <p>Меню</p>
+            <p className={styles.navlink__title}>Меню</p>
           </NavLink>
+          {/* </div> */}
+
+          {/* <div className={styles.navlink_wrapper}> */}
           <NavLink
             to="/profile"
-            className={classNames(styles.navlink, {
-              [styles.active]: active === "/profile",
-            })}
-            activeClassName={styles.active}
-            // onClick={() => handleNavlinkClick("/profile")}
+            className={({ isActive }) =>
+              [
+                styles.navlink,
+                isActive ? styles.navlink__active : styles.navlink,
+              ].join(" ")
+            }
           >
             <img src={images.profileIcon} alt="Profile Icon" />
-            <p>Профиль</p>
+            <p className={styles.navlink__title}>Профиль</p>
           </NavLink>
         </div>
 
-        <button onClick={() => setModalActive(true)} className={styles.logout}>
+        <NavLink
+          onClick={() => setModalActive(true)}
+          className={classNames(styles.logout, styles.navlink)}
+        >
           <img src={images.logoutIcon} alt="Logout" />
-          Выйти
-        </button>
+          <p className={styles.navlink__title}>Выйти</p>
+        </NavLink>
       </div>
 
       {/* <Menu
